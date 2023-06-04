@@ -9,6 +9,8 @@ class PostController extends Controller
 {
     public function index(Post $post) // インポートしたPostをインスタンス化して$postとして使う
     {
-        return $post->get(); // $postの中身が戻り値
+        return view('posts.index')->with(['posts' => $post->getPaginateByLimit()]); 
+        // blade内変数'posts'と設定。'posts'の中身にインスタンス化した$postをgetByLimitで代入
     }
 }
+?>
