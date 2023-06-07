@@ -2,7 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PostController;  //PostControllerクラスをインポート。
-
+use App\Http\Controllers\RecordController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -25,3 +25,6 @@ Route::put('/posts/{post}', [PostController::class, 'update']);
 Route::post('/posts', [PostController::class, 'store']);
 
 Route::delete('/posts/{post}', [PostController::class, 'delete']);
+
+
+Route::get('/records', [RecordController::class, 'index']);
