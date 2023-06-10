@@ -9,6 +9,7 @@ class RecordController extends Controller
 {
     public function index(Record $record)
     {
-        return $record->get();
+        return view('records.index')->with(['records' => $record->getPaginateByLimit()]);
     }
+    
 }
