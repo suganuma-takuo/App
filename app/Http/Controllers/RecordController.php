@@ -41,4 +41,10 @@ class RecordController extends Controller
         $record->fill($input_record)->save();
         return redirect('/records/' . $record->id);
     }
+    
+    public function delete(Record $record)
+    {
+        $record->delete();
+        return redirect('/');
+    }
 }

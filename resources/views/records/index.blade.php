@@ -30,6 +30,13 @@
                     <td>{{ $record->break_in }} </td>
                     <td>{{ $record->break_out }} </td>
                     <td>{{ $record->remarks }} </td>
+                    <td>
+                        <form action="/records/{{ $record->id }}" id="form_{{ $record->id }}" method="post">
+                            @csrf
+                            @method('DELETE')
+                                <button type="button" onclick="deleteRecord({{ $record->id }})">delete</button> 
+                        </form>
+                    </td>
                 </tr>
             @endforeach
             </table>
@@ -38,4 +45,13 @@
         <div class='paginate'>
             {{ $records->links() }}
         </div>
+        <script>
+        function deleteRecord(id) {
+            'use strict'
+
+            if (confirm('削除すると復元できません。\n本当に削除しますか？')) {
+            document.getElementById(`form_${id}`).submit();
+            }
+        }
+        </script>
     </body>

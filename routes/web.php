@@ -34,4 +34,6 @@ Route::get('/records/{record}/edit', [RecordController::class, 'edit']);
 
 Route::put('/records/{record}', [RecordController::class, 'update']);
 
-Route::post('/records', [RecordController::class, 'update']);
+Route::post('/records', [RecordController::class, 'store']);
+
+Route::delete('/records/{record}', [RecordController::class, 'delete']);
