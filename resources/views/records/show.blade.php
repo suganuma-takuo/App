@@ -28,7 +28,8 @@
                     <td>{{ $record->break_out }} </td>
                     <td>{{ $record->remarks }} </td>
                 </tr>
-            </div>
+            </table>
+        </div>
         <div class="footer">
             <a href="/">戻る</a>
         </div>

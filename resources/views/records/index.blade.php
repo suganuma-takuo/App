@@ -8,6 +8,7 @@
     </head>
     <body>
         <h1>Records</h1>
+        <a href='/records/create'>create</a>
         <div class='records'>
             <div class='record'>
             <table>
@@ -31,7 +32,8 @@
                     <td>{{ $record->remarks }} </td>
                 </tr>
             @endforeach
-            </div>
+            </table>
+        </div>
         </div>
         <div class='paginate'>
             {{ $records->links() }}
