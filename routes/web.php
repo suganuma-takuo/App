@@ -28,4 +28,7 @@ Route::delete('/posts/{post}', [PostController::class, 'delete']);
 
 
 Route::get('/', [RecordController::class, 'index']);
+Route::get('/records/create', [RecordController::class, 'create']);
 Route::get('/records/{record}', [RecordController::class, 'show']);
+
+Route::post('/records', [RecordController::class, 'store']);

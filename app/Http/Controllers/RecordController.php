@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
+use App\Http\Requests\RecordRequest;
 use App\Models\Record;
 
 class RecordController extends Controller
@@ -17,4 +17,15 @@ class RecordController extends Controller
         return view('records.show')->with(['record' => $record]);
     }
     
+    public function create()
+    {
+        return view('records.create');
+    }
+    
+    public function store(Record $record, RecordRequest $request)
+    {
+        $input = $request['record'];
+        $record->fill($input)->save();
+        return redirect('/records/' . $record->id);
+    }
 }
