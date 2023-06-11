@@ -25,10 +25,10 @@ class RecordRequest extends FormRequest
     {
         return [
             'record.date' => 'required|date|max:30',
-            'record.time_in' => 'required|date_format:H:i|max:30',
-            'record.time_out' => 'required|date_format:H:i|max:30',
-            'record.break_in' => 'required|date_format:H:i|max:30',
-            'record.break_out' => 'required|date_format:H:i|max:30',
+            'record.time_in' => 'required|date_format:H:i|max:20',
+            'record.time_out' => 'required|date_format:H:i|max:20',
+            'record.break_in' => 'required|date_format:H:i|max:20',
+            'record.break_out' => 'required|date_format:H:i|max:20',
         ];
     }
 }
