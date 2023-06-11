@@ -15,7 +15,8 @@ class Record extends Model
         'break_in',
         'break_out',
         'remarks',
-        ];
+    ];
+    
     public function getPaginateByLimit(int $limit_count = 10)
     {
         // updated_atで降順に並べたあと、limitで件数制限をかける
