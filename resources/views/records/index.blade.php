@@ -6,6 +6,7 @@
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
     </head>
+    <x-app-layout>
     <body>
         <h1>Records</h1>
         <a href='/records/create'>create</a>
@@ -45,6 +46,7 @@
         <div class='paginate'>
             {{ $records->links() }}
         </div>
+        <p class="user_name">ユーザーネーム: {{ Auth::user()->name }}</p>
         <script>
         function deleteRecord(id) {
             'use strict'
@@ -55,3 +57,5 @@
         }
         </script>
     </body>
+    </x-app-layout>
+</html>

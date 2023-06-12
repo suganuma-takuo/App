@@ -4,6 +4,7 @@
         <meta charset="utf-8">
         <title>Records</title>
     </head>
+    <x-app-layout>
     <body>
         <h1 class="title">編集画面</h1>
         <div class="content">
@@ -33,4 +34,5 @@
             <a href="/records/{{$record->id}}">戻る</a>
         </div>
     </body>
+    </x-app-layout>
 </html>

@@ -4,6 +4,7 @@
         <meta charset="utf-8">
         <title>Records</title>
     </head>
+    <x-app-layout>
     <body>
         <div class='record'>
             <table>
@@ -40,4 +41,5 @@
             <a href="/">戻る</a>
         </div>
     </body>
+    </x-app-layout>
 </html>
