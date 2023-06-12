@@ -6,6 +6,7 @@
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
     </head>
+    <x-app-layout>
     <body>
         <a href='/posts/create'>create</a>
         <h1>Blog Name</h1>
@@ -37,4 +38,5 @@
             }
         </script>
     </body>
+    </x-app-layout>
 </html>

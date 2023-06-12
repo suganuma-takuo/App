@@ -29,6 +29,7 @@ class RecordRequest extends FormRequest
             'record.time_out' => 'required|date_format:H:i|max:20',
             'record.break_in' => 'required|date_format:H:i|max:20',
             'record.break_out' => 'required|date_format:H:i|max:20',
+            'record.remarks' => 'nullable|string|max:20',
         ];
     }
 }
