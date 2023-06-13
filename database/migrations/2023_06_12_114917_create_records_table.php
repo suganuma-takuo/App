@@ -15,7 +15,15 @@ return new class extends Migration
     {
         Schema::create('records', function (Blueprint $table) {
             $table->id();
+            $table->bigInteger('user_id')->unsigned();
+            $table->date('date');
+            $table->time('time_in');
+            $table->time('time_out')->nullable();
+            $table->time('break_in')->nullable();
+            $table->time('break_out')->nullable();
+            $table->string('remarks', 20)->nullable();
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

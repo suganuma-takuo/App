@@ -12,6 +12,7 @@
         <h1 class="title">
             {{ $post->title }}
         </h1>
+        <small>{{ $post->user->name }}</small>
         <div class="content">
             <div class="content__post">
                 <h3>本文</h3>
@@ -20,7 +21,7 @@
         </div>
         <div class="footer">
             <div class="edit"><a href="/posts/{{ $post->id }}/edit">edit</a></div>
-            <a href="/">戻る</a>
+            <a href="/posts">戻る</a>
         </div>
     </body>
     </x-app-layout>
