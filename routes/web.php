@@ -43,30 +43,30 @@ Route::middleware('auth')->group(function () {
 
 Route::controller(PostController::class)->middleware(['auth'])->group(function(){
     Route::get('/posts', 'index')->name('posts/index');
-    Route::get('/posts/create', 'create')->name('create');
-    Route::get('/posts/{post}', 'show')->name('show');
+    Route::get('/posts/create', 'create')->name('posts/create');
+    Route::get('/posts/{post}', 'show')->name('posts/show');
     // '/posts/{対象データのID}'にGetリクエストが来たら、PostControllerのshowメソッドを実行する
-    Route::get('/posts/{post}/edit', 'edit')->name('edit');
+    Route::get('/posts/{post}/edit', 'edit')->name('posts/edit');
     
-    Route::put('/posts/{post}', 'update')->name('update');
+    Route::put('/posts/{post}', 'update')->name('posts/update');
     
-    Route::post('/posts', 'store')->name('store');
+    Route::post('/posts', 'store')->name('posts/store');
     
-    Route::delete('/posts/{post}', 'delete')->name('delete');
+    Route::delete('/posts/{post}', 'delete')->name('posts/delete');
 });
 
 Route::controller(RecordController::class)->middleware(['auth'])->group(function(){
     Route::get('/records', 'index')->name('records/index');
-    Route::get('/records/create', 'create')->name('create');
-    Route::get('/records/{record}', 'show')->name('show');
+    Route::get('/records/create', 'create')->name('records/create');
+    Route::get('/records/{record}', 'show')->name('records/show');
     
-    Route::get('/records/{record}/edit', 'edit')->name('edit');
+    Route::get('/records/{record}/edit', 'edit')->name('records/edit');
 
-    Route::put('/records/{record}', 'update')->name('update');
+    Route::put('/records/{record}', 'update')->name('records/update');
 
-    Route::post('/records', 'store')->name('store');
+    Route::post('/records', 'store')->name('records/store');
 
-    Route::delete('/records/{record}', 'delete')->name('delete');
+    Route::delete('/records/{record}', 'delete')->name('records/delete');
 });
 
 require __DIR__.'/auth.php';

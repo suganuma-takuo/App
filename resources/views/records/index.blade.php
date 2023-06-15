@@ -11,7 +11,7 @@
         Records
     </x-slot>
     <body>
-        <a href='/records/create'>create</a>
+        <a href='/records/create'>create</a><p>time_out</p>
         <div class='records'>
             <div class='record'>
             <table>
