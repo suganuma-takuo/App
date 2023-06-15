@@ -11,6 +11,7 @@ class Record extends Model
     use SoftDeletes;
     use HasFactory;
     protected $fillable = [
+        'user_id',
         'date',
         'time_in',
         'time_out',
@@ -22,6 +23,11 @@ class Record extends Model
     public function getPaginateByLimit(int $limit_count = 10)
     {
         // updated_atで降順に並べたあと、limitで件数制限をかける
-        return $this->orderBy('updated_at', 'DESC')->paginate($limit_count);
+        return $this::with('user')->orderBy('updated_at', 'DESC')->paginate($limit_count);
+    }
+    
+    public function user()
+    {
+        return $this->belongsTo(User::class);
     }
 }

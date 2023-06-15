@@ -7,14 +7,18 @@
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
     </head>
     <x-app-layout>
+    <x-slot name="header">
+        Records
+    </x-slot>
     <body>
-        <h1>Records</h1>
-        <a href='/records/create'>create</a>
+        <a href='/records/create'>create</a><p>time_out</p>
         <div class='records'>
             <div class='record'>
             <table>
                 <tr>
                     <td>id</td>
+                    <td>user_id</td>
+                    <td>name</td>
                     <td>date</td>
                     <td>time_in</td>
                     <td>time_out</td>
@@ -24,12 +28,14 @@
                 </tr>
             @foreach($records as $record)
                 <tr>
-                    <td><a href="/records/{{ $record->id }}">{{ $record->id }}</a> </td>
+                    <td>{{ $record->id }}</td>
+                    <td><a href="/records/{{ $record->id }}">{{ $record->user->id }}</a> </td>
+                    <td>{{ $record->user->name }} </td>
                     <td>{{ $record->date }} </td>
-                    <td>{{ $record->time_in }} </td>
-                    <td>{{ $record->time_out }} </td>
-                    <td>{{ $record->break_in }} </td>
-                    <td>{{ $record->break_out }} </td>
+                    <td>{{ substr($record->time_in, 0, 5) }} </td>
+                    <td>{{ substr($record->time_out, 0, 5) }} </td>
+                    <td>{{ substr($record->break_in, 0, 5) }} </td>
+                    <td>{{ substr($record->break_out, 0, 5) }} </td>
                     <td>{{ $record->remarks }} </td>
                     <td>
                         <form action="/records/{{ $record->id }}" id="form_{{ $record->id }}" method="post">

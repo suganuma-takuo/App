@@ -24,12 +24,13 @@ class RecordRequest extends FormRequest
     public function rules()
     {
         return [
-            'record.date' => 'required|date|max:30',
-            'record.time_in' => 'required|date_format:H:i|max:20',
-            'record.time_out' => 'required|date_format:H:i|max:20',
-            'record.break_in' => 'required|date_format:H:i|max:20',
-            'record.break_out' => 'required|date_format:H:i|max:20',
+            'record.date' => 'required|date|before_or_equal:today',
+            'record.time_in' => 'required',
+            'record.time_out' => 'nullable|after:record.time_in|after:record.break_out',
+            'record.break_in' => 'nullable||after:record.time_in',
+            'record.break_out' => 'nullable|after:record.break_in',
             'record.remarks' => 'nullable|string|max:20',
+
         ];
     }
 }
