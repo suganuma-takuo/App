@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PostController;  //PostControllerクラスをインポート。
 use App\Http\Controllers\RecordController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\CustomerController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -28,6 +29,9 @@ use App\Http\Controllers\UserController;
 |
 */
 Route::get('/', function(){return view('start');});
+
+Route::get('/customers', [CustomerController::class, 'call']);
+Route::get('/customers/wait', [CustomerController::class, 'calling']);
 
 Route::get('/user', [UserController::class, 'index']);
 

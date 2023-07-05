@@ -4,6 +4,15 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>Records</title>
+        <script src="https://js.pusher.com/7.2/pusher.min.js"></script>
+        <script>
+            Pusher.logToConsole = true;
+            var pusher = new Pusher('d168de9db8dae63eec7a', {cluster: 'ap3'});
+            var channel = pusher.subscribe('calling');
+            channel.bind('App\\Events\\CustomerCalling', function(data){
+                alert('お客様から呼び出しがあります。');
+            });
+        </script>
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
     </head>

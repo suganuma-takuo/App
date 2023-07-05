@@ -23,6 +23,7 @@
                 </div>
                 <input type="submit" value="保存">
             </form>
+            <a href="/posts/{{$post->id}}">戻る</a>
         </div>
     </body>
     </x-app-layout>

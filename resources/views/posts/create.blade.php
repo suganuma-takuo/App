@@ -21,7 +21,6 @@
             </div>
             <input type="submit" value="保存"/>
         </form>
-        <div class="back">[<a href="/">戻る</a>]</div>
-    </body>
+        <div class="back"><a href="/posts">戻る</a></div>
     </x-app-layout>
 </html>

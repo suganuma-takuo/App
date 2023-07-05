@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Post; // App\Models内のPostクラスをインポート
 use App\Http\Requests\PostRequest; 
+use App\Events\Posted;
 
 class PostController extends Controller
 {
@@ -29,6 +30,8 @@ class PostController extends Controller
         $input = $request['post'];
         $input += ['user_id' => $request->user()->id];
         $post->fill($input)->save();
+        broadcast(new Posted($post));
+        
         return redirect('/posts/' . $post->id);
     }
     
@@ -42,6 +45,7 @@ class PostController extends Controller
         $input_post = $request['post'];
         $input_post += ['user_id' => $request->user()->id];
         $post->fill($input_post)->save();
+        event(new Posted($post));
 
         return redirect('/posts/' . $post->id);
     }
