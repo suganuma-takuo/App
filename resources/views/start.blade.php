@@ -8,6 +8,6 @@
     </head>
     <body>
         <a href='/login'>従業員用（ログイン）</a>
-        <a href='/customer'>お客様用</a>
+        <a href='/customers'>お客様用</a>
     </body>
 </html>

@@ -25,7 +25,7 @@
                         <td><input type="time" name="record[break_in]" placeholder="休憩開始時刻" value="{{ old('record.break_in') }}"/> </td>
                         <td><input type="time" name="record[break_out]" placeholder="休憩終了時刻" value="{{ old('record.break_out') }}"/> </td>
                         <td><input type="text" name="record[remarks]" placeholder="備考" value="{{ old('record.remarks') }}"/> </td>
-                        <input type="submit" value="store"/>
+                        <input type="submit" value="保存"/>
                     </form>
                 </tr>
                 <tr>
@@ -38,7 +38,7 @@
             </table>
         </div>
         <div class="footer">
-            <a href="/">戻る</a>
+            <a href="/records">戻る</a>
         </div>
     </body>
     </x-app-layout>
