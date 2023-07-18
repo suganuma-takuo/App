@@ -20,12 +20,11 @@
         Records
     </x-slot>
     <body>
-        <a href='/records/create'>create</a><p>time_out</p>
+        <a href='/records/create'>create</a>
         <div class='records'>
             <div class='record'>
             <table>
                 <tr>
-                    <td>id</td>
                     <td>user_id</td>
                     <td>name</td>
                     <td>date</td>
@@ -37,7 +36,6 @@
                 </tr>
             @foreach($records as $record)
                 <tr>
-                    <td>{{ $record->id }}</td>
                     <td><a href="/records/{{ $record->id }}">{{ $record->user->id }}</a> </td>
                     <td>{{ $record->user->name }} </td>
                     <td>{{ $record->date }} </td>
